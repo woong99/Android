@@ -12,13 +12,27 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55739189-90e0-4f67-9111-85310e2fa1f3" name="Default Changelist" comment="" />
+    <list default="true" id="55739189-90e0-4f67-9111-85310e2fa1f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin_Study/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin_Study/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin_Study/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/app/src/main/java/com/example/myapplication/Kotlin/02_Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/app/src/main/java/com/example/myapplication/Kotlin/03_Practice.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/app/src/main/java/com/example/myapplication/Kotlin/04_Function.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/app/src/main/java/com/example/myapplication/Kotlin/Variable.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin_Study/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin_Study/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/Users/woong_9yo/.android/avd/Pixel_4_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -59,7 +73,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1uIjy0PtxSsKPWvbYBHpJztSHnh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
