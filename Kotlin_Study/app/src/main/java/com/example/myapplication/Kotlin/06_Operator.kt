@@ -18,15 +18,15 @@ package com.example.myapplication.Kotlin
 // a++, a--
 
 // 비교 연산자
-// >, >=, <, <=, ==, !=
-// True == True -> True
-// True == False -> False
-// True != True -> False
-// True != False -> True
-
-// 논리 연산자
-// &&, ||, !
-// True && True -> True
-// True || False -> True
-// !True -> False
-// !False -> True
+//// >, >=, <, <=, ==, !=
+//// True == True -> True
+//// True == False -> False
+//// True != True -> False
+//// True != False -> True
+//
+//// 논리 연산자
+//// &&, ||, !
+//// True && True -> True
+//// True || False -> True
+//// !True -> False
+//// !False -> True
