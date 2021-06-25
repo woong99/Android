@@ -6,6 +6,7 @@
 4. [연산자](#4-연산자)
 5. [제어흐름](#5-제어흐름)
 6. [배열](#6-배열)
+7. [Collection](#7-Collection)
 
 ---
 
@@ -360,3 +361,68 @@ fun showMyPlus(first: Int, second: Int): Int {
     group.set(0,100)
     group[0] = 200
 ```
+
+## 7. Collection
+
+- Collection
+
+  - Imutable Collection (변경 불가능)
+
+    - List -> 중복을 허용한다.
+
+    ```Kotlin
+       val numberList = listOf<Int>(1,2,3,4)
+       println(numberList)
+
+       >>> [1, 2, 3, 4]
+    ```
+
+    - Set -> 중복을 허용하지 않는다.
+
+    ```Kotlin
+       val numberSet = setOf<Int>(1, 2, 3, 3, 3)
+       println(numberSet)
+
+       >>> [1, 2, 3]
+    ```
+
+    - Map -> Key, Value 방식으로 저장한다.
+
+    ```Kotlin
+        val numberMap = mapOf<String, Int>("one" to 1, "two" to 2)
+        println(numberMap)
+
+        >>> {one=1, two=2}
+    ```
+
+  - Mutable Collection (변경 가능)
+
+    - MutableList
+
+    ```Kotlin
+       val mNumberList = mutableListOf<Int>(1, 2, 3)
+       mNumberList.add(3, 4)
+       println(mNumberList)
+
+       >>> [1, 2, 3, 4]
+    ```
+
+    - MutableSet
+
+    ```Kotlin
+        val mNumberSet = mutableSetOf<Int>(1, 2, 3, 4, 4, 4)
+        mNumberSet.add(10)
+        println(mNumberSet)
+
+        >>> [1, 2, 3, 4, 10]
+    ```
+
+    - MutableMap
+
+    ```Kotlin
+        val mNumberMap = mutableMapOf<String, Int>("one" to 1)
+        mNumberMap.put("two", 2)
+        println(mNumberMap)
+
+        >>> {one=1, two=2}
+    ```
