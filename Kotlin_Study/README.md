@@ -7,6 +7,7 @@
 5. [제어흐름](#5-제어흐름)
 6. [배열](#6-배열)
 7. [Collection](#7-Collection)
+8. [반복문](#8-반복문)
 
 ---
 
@@ -426,3 +427,105 @@ fun showMyPlus(first: Int, second: Int): Int {
 
         >>> {one=1, two=2}
     ```
+
+## 8. 반복문
+
+- 반복하는 방법 (1)
+
+  ```Kotlin
+    for (item in a) {
+        if (item == 5) {
+            println("item is Five")
+        } else {
+            println("item is not Five")
+        }
+    }
+  ```
+
+- 반복하는 방법 (2)
+  ```Kotlin
+    for ((index, item) in a.withIndex()) {
+        println("index : " + index + " value : " + item)
+        // 문자열 + Int(정수) = 문자열
+        // 문자열 + 아무거나 = 문자열
+    }
+    >>> index : 0 value : 1
+    ...
+  ```
+- 반복하는 방법 (3)
+  ```Kotlin
+    a.forEach { // 기본적으로 it 사용
+        println(it)
+    }
+  ```
+- 반복하는 방법 (4)
+
+  ```Kotlin
+    a.forEach { item ->     // oo -> 을 이용해 it 대신 oo 사용
+        println(item)
+    }
+  ```
+
+- 반복하는 방법 (5)
+  ```Kotlin
+    a.forEachIndexed { index, item ->
+        println("index : " + index + " value : " + item)
+    }
+  ```
+- 반복하는 방법 (6)
+  ```Kotlin
+    for (i in 0 until a.size) {  // 0 부터 a.size 까지 반복(인덱스)
+        // until 은 마지막을 포함하지 않는다.
+        println(a[i])
+        // println(a.get(i))
+    }
+  ```
+- 반복하는 방법 (7)
+
+  ```Kotlin
+    for (i in 0 until a.size step (2)) {     // step 을 설정하면 뛰어서 반복
+        println(a.get(i))
+    }
+  ```
+
+- 반복하는 방법 (8)
+
+  ```Kotlin
+  for (i in a.size - 1 downTo (0)) {
+      // 8부터 0까지 반복
+      println(a[i])
+  }
+  ```
+
+- 반복하는 방법 (9)
+  ```Kotlin
+    for (i in a.size - 1 downTo (0) step (2)) {
+        println(a[i])
+    }
+  ```
+- 반복하는 방법 (10)
+  ```Kotlin
+    for (i in 0..10) {      // 마지막 숫자 포함
+        println(i)
+    }
+  ```
+- 반복하는 방법 (11)
+
+  ```Kotlin
+    var b: Int = 0
+    var c: Int = 4
+
+    while (b < c) {
+        b++
+        println(b)
+    }
+  ```
+
+- 반복하는 방법 (11)
+
+  ```kotlin
+    do {            // do 부분은 무조건 한 번 실행
+      println("hello")
+      b++
+    } while (b < c)
+  ```
