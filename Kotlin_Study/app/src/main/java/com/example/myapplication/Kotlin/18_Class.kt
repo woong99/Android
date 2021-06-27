@@ -38,6 +38,11 @@ fun main(array: Array<String>) {
     // 인스턴스의 멤버 변수에 접근 하는 방법
     val runableCar2: RunableCar2 = RunableCar2("nice engine", "long body")
     println(runableCar2.body)
+    println()
+
+    val testClass = TestClass()
+    testClass.test(1)
+    testClass.test(1,2)
 }
 
 // 클래스 만드는 방법 (1)
@@ -131,4 +136,16 @@ class RunableCar2 {
         println("$destination 으로 목적지가 설정되었습니다.")
     }
 
+}
+
+// 오버로딩
+// -> 이름이 같지만 받는 파라미터가 다른 함수
+class TestClass() {
+    fun test(a: Int) {
+        println("up")
+    }
+
+    fun test(a: Int, b: Int) {
+        println("down")
+    }
 }

@@ -8,6 +8,8 @@
 6. [배열](#6-배열)
 7. [Collection](#7-Collection)
 8. [반복문](#8-반복문)
+9. [클래스](#9-킅래스)
+10. [접근 제어자](#10-접근-제어자)
 
 ---
 
@@ -363,6 +365,8 @@ fun showMyPlus(first: Int, second: Int): Int {
     group[0] = 200
 ```
 
+---
+
 ## 7. Collection
 
 - Collection
@@ -427,6 +431,8 @@ fun showMyPlus(first: Int, second: Int): Int {
 
         >>> {one=1, two=2}
     ```
+
+---
 
 ## 8. 반복문
 
@@ -529,3 +535,122 @@ fun showMyPlus(first: Int, second: Int): Int {
       b++
     } while (b < c)
   ```
+
+---
+
+## 9. 클래스
+
+```
+  Kotlin 은 OOP(Object Oriented Programing) = 객체지향 프로그래밍
+
+  객체란?
+  -> 이름이 있는 모든 것
+```
+
+- 클래스 만드는 방법 (1)
+
+```Kotlin
+  class Car(var engine: String, var body: String) {
+
+  }
+```
+
+- 클래스 만드는 방법 (2)
+
+```Kotlin
+  class SuperCar {
+    var engine: String
+    var body: String
+    var door: String
+
+    constructor(engine: String, body: String, door: String) {
+        println(engine)
+        println(body)
+        println(door)
+        this.engine = engine
+        this.body = body
+        this.door = door
+    }
+}
+```
+
+- 클래스 만드는 방법 (3) -> 1번 방법의 확장
+
+```Kotlin
+  class Car1(engine: String, body: String) {
+    var door: String = ""
+
+    // 생성자
+    constructor(engine: String, body: String, door: String) : this(engine, body) {
+        this.door = door
+    }
+}
+```
+
+- 클래스 만드는 방법 (4) -> 2번 방법의 확장
+
+```Kotlin
+  class Car2 {
+    var engine: String = ""
+    var body: String = ""
+    var door: String = ""
+
+    constructor(engine: String, body: String) {
+        this.engine = engine
+        this.body = body
+    }
+
+    constructor(engine: String, body: String, door: String) {
+        this.engine = engine
+        this.body = body
+        this.door = door
+    }
+}
+```
+
+- 클래스를 사용하는 방법
+
+```Kotlin
+  val bigCar: Car = Car("v8 engine", "big")
+  println(bigCar.engine)
+
+  >>> v8 engine
+```
+
+- init()
+
+```Kotlin
+  class ~~~{
+    ~~~
+    ~~~
+    init{
+      /~~~~~~/
+    }
+  }
+
+  >>> init이 가장 먼저 호출, 초기 셋팅을 할때 유용
+```
+
+- 오버로딩 (이름이 같지만 받는 파라미터가 다른 함수)
+
+```Kotlin
+  class TestClass() {
+    fun test(a: Int) {
+        println("up")
+    }
+
+    fun test(a: Int, b: Int) {
+        println("down")
+    }
+}
+```
+
+---
+
+## 10. 접근 제어자
+
+```Kotlin
+  private val ~~~
+```
+
+### private 를 앞에 붙여주면 외부에서 접근이 불가능하다!
