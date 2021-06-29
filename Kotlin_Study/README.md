@@ -10,6 +10,7 @@
 8. [반복문](#8-반복문)
 9. [클래스](#9-킅래스)
 10. [접근 제어자](#10-접근-제어자)
+11. [상속](#11-상속)
 
 ---
 
@@ -654,3 +655,30 @@ fun showMyPlus(first: Int, second: Int): Int {
 ```
 
 ### private 를 앞에 붙여주면 외부에서 접근이 불가능하다!
+
+---
+
+## 11. 상속
+
+### 상속이란?
+
+- 부모로부터 함수나 변수를 물려받는다.
+- 자식 클래스는 부모 클래스의 타입이다
+
+```Kotlin
+  open class Car100() {
+    open fun drive(): String {
+        return "달린다"
+    }
+
+    fun stop() {}
+  }
+
+  // 커맨드 + n -> Override Methods 클릭
+  class SuperCar100() : Car100() {
+    override fun drive(): String {
+        val run = super.drive()
+        return "빨리 $run"
+    }
+  }
+```
