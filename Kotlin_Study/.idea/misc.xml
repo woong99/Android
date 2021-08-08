@@ -4,8 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/frame_layout_07.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/frame_layout_practice_09.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/linear_layout.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/layout/linear_layout_practice.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/layout/padding_margin_06.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/relative_layout_03.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/relative_layout_05.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/relative_layout_08.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/relative_layout_practice_05.xml" value="0.37604166666666666" />
       </map>
     </option>
   </component>

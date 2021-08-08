@@ -16,6 +16,16 @@
 
 ---
 
+# Android_UI
+
+1. [화면 그리기](#1-화면-그리기)
+
+---
+
+# Kotlin 입문기
+
+---
+
 ## 1. 변수
 
 ### 변수의 두 종류
@@ -713,3 +723,11 @@ fun showMyPlus(first: Int, second: Int): Int {
     // 부모 : Any
     // 자식 : String, Int, Float
 ```
+
+---
+
+# Android_UI
+
+---
+
+1.  [화면 그리기]
