@@ -19,6 +19,7 @@
 # Android_UI
 
 1. [화면 그리기](#1-화면-그리기)
+2. [LinearLayout](#2-linearlayout)
 
 ---
 
@@ -730,4 +731,44 @@ fun showMyPlus(first: Int, second: Int): Int {
 
 ---
 
-1.  [화면 그리기]
+## 1. 화면 그리기
+
+### 안드로이드에서 화면을 그리는 방법
+
+- XML을 이용한다
+
+### XML이란?
+
+- DSL Language -> Domain Specific Language
+- 안드로이드 UI를 그리기 위해 특화된 언어이다
+
+### 핸드폰마다 화면 크기가 다 다른데 어떻게 화면을 그려야 할까?
+
+- 픽셀 , dpi, dp 단위
+- 픽셀 -> 핸드폰 화면에서 빛이 나오는 전구 -> 가장 작은 단위
+- dpi -> dot per inch
+
+* ldpi -> 120 (1인치에 120픽셀)
+* mdpi -> 160
+* hdpi -> 240
+* xhdpi -> 320
+* xxhdpi -> 480
+* xxxhdpi -> 640
+
+- dp -> Density Independent Pixel
+- 픽셀 독립적인 단위
+
+## 2. LinearLayout
+
+### 레이아웃 종류
+
+- 속성
+  - match_parent: 해상도와 상관없이 화면을 꽉 채워준다 (전체 화면 100%)
+  - wrap_content: 크기가 정해져 있지 않지만 text 크기만큼만 지정한다
+- LinearLayout
+  - orientation: 반드시 들어가는 속성, 데이터가 들어가는 방향을 정해준다
+    - horizontal: 수평방향
+    - vertical: 수직방향
+  - gravity: 자식 View들의 중력방향을 결정
+  - layout_gravity: 레이아웃안에서 어디에 위치 할 것인지 정해준다
+  - ignoregravity: gravity 설정 상태에서 특정 자식 View에 대해 속성 무시
