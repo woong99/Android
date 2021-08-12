@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_calculator.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/activity_listener.xml" value="0.25" />
         <entry key="app/src/main/res/layout/frame_layout_07.xml" value="0.2" />
         <entry key="app/src/main/res/layout/frame_layout_practice_09.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/linear_layout_practice_02.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/practice_12.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/relative_layout_04.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/relative_layout_08.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/relative_layout_practice_05.xml" value="0.37604166666666666" />
       </map>
     </option>
   </component>
