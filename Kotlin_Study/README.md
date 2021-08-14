@@ -23,6 +23,12 @@
 
 ---
 
+# Android_Essential
+
+1. [Activity](#1_Activity)
+
+---
+
 # Kotlin 입문기
 
 ---
@@ -772,3 +778,260 @@ fun showMyPlus(first: Int, second: Int): Int {
   - gravity: 자식 View들의 중력방향을 결정
   - layout_gravity: 레이아웃안에서 어디에 위치 할 것인지 정해준다
   - ignoregravity: gravity 설정 상태에서 특정 자식 View에 대해 속성 무시
+
+---
+
+# Android_Essential
+
+## 1. Activity
+
+- Activity란?
+- 앱의 한 화면이다
+- Life Cycle(수명 주기)
+- onCreate
+  - Activity가 만들어질 때 단 한 번만 호출된다
+  - Activity를 만들 때 단 한 번만 하면 되는 작업들은 여기에서 해준다
+- onStart
+- onResume
+  - 다시 앱으로 돌아올 때 무조건 호출
+  - Activity가 다시 호출 될 때 하면 되는 작업들을 여기에서 해준다
+- onPause
+  - 화면의 일부가 가려 졌을 때
+- onStop
+  - 화면 전부가 보이지 않을 때
+- onDestroy
+
+```Kotlin
+  //cmd + n -> Override Method -> 선택
+  //ex)
+  override fun onStart(){
+    super.onStart()
+    // ~~~
+  }
+```
+
+## 2. Listener
+
+- **익명함수/클래스**란?
+  - 이름이 없는 함수/클래스
+  - 이름을 만들어 줄 필요가 없다
+  - 한 번만 사용한다
+- **View**를 Activity로 가져오는 방법
+
+```kotlin
+  // 1. 직접 찾아서 가져온다
+    val textView : TextView = findViewById(R.id.hello)
+  // 2, XML을 import해서 가져온다
+    hello // 입력 후 option + enter로 import
+```
+
+- **Button** 사용법
+
+```Kotlin
+  // 1 -> 람다 방식
+  hello.setOnclickListener{
+    // ~~~
+  }
+  // 2 -> 익명 함수 방식
+  hello.setOnclickListener(object : View.OnClickListener){
+    override fun onClick(v : View?){
+      // ~~~
+    }
+  }
+  // 3 -> 이름이 필요한 경우
+  val click = object: View.OnClickListener{
+    override fun onClick(v : View?){
+      // ~~~
+    }
+  }
+  hello.setOnClickListener(click)
+```
+
+- **View** 조작하기
+  - setText
+  - setImageResource 등등
+
+## 3. Intent
+
+- 의도, 요구, 의사 전달, 요청
+- Intent 사용
+  - Activity 와 Activity
+  - Android System 과 내 App(전화)
+  - 다른 App 과 내 App -> 무작정 사용 X, 상호합의 필요
+- 요청의 종류
+  - 전달만 하는 요청
+  - 리턴을 받는 요청
+- Intent의 종류
+  - 명시적 인텐트 -> 정확히 대상에게 요청
+  - 암시적 인텐트 -> 할 수 있는 대상에게 요청
+
+### Intent 사용 예시
+
+```Kotlin
+  // 정보 넘기기
+  class Intent1
+  val intent = Intent(this@Intent1, Intent2::class.java)
+  intent.putExtra("number1" , 1)
+  intent.putExtra("number2" , 2)
+  startActivity(intent)
+
+// 정보 받기
+  class Intent2
+  val number1 = intent.getInExtra("number1" , 0)
+  val number2 = intent.getInExtra("number2" , 0)
+
+  val result = number1 + number2
+  val resultIntent = Intent()
+  resultIntent.putExtra("result", result)
+  setResult(Activity.RESULT_OK, resultIntent) // 결과값 넣어주기
+  this.finish() // -> Activity 종료
+
+// Apply (블록 지어져 있어서 가독성이 더 좋고 유시보수가 좋다)
+  intent2.apply {
+    this.putExtra("number1", 1)
+    this.putExtra("number2", 2)
+  }
+  startActivityForResult(intent2, 200)
+```
+
+## 4. Fragment
+
+- Activity -> 앱에 보이는 한 화면의 단위
+- Activity가 가지고 있는 문제
+  - Activity가 길어지게 되면 (파트 1,2,3,4,5,6) -> 관리 포인트가 많아진다 -> 관리가 어려워진다
+- 다양한 디바이스에서 오는 문제
+  - 안드로이드 디바이스가 너무 다양하다
+  - 안드로이드 핸드폰만 있는게 아니다 -> 테블릿이 있다
+- 사용처
+  - Activity의 파트를 나누어서 책임진다
+- Fragment
+  - Life Cycle이 존재한다
+  - Activity 종속적이다
+- **사용법**
+  - XML에 ViewComponent로 추가한다
+  - 코드(동적)로 추가한다
+- 데이터 전달 방법
+  - Activity -> Fragment : argument 와 bundle
+  - Fragment -> Activity : 자체 구현(Listener 구현)
+
+```XML
+  <fragment
+    android:id="@+id/fragment_01"  // id 필수!
+    // name 을 통해 설정
+    android:name="com.example.myapplication.Fragment_01"
+    android:layout_width="match_parent"
+    android:layout_height="300dp" />
+
+```
+
+### XML로 추가하기
+
+```Kotlin
+  // XML로 추가하기
+  class ~~~ : Fragment(){ // Fragment를 상속받는다
+  override fun onCreateView( // View를 그리는 애
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Fragment가 인터페이스를 처음으로 그릴 때 호출된다.
+        // inflater -> View를 그려주는 역할
+        // container -> 부모 View
+        return inflater.inflate(R.layout.fragment_01, container, false) // View 타입 Return
+
+    }
+  }
+```
+
+### 동적으로 추가하기
+
+```Kotlin
+  // 동적으로 추가하기
+override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_fragment)
+        Log.d("life_cycle", "onCreate")
+
+        val fragmentOne: Fragment_01 = Fragment_01()
+
+        button.setOnClickListener {
+            // Fragment를 동적으로 작동하는 방법
+            // Fragment 붙이는 방법 replace/add
+            val fragmentManager: FragmentManager = supportFragmentManager
+            // Transaction
+            // 작업의 단위 -> 시작과 끝이 있다
+            val fragmentTransaction = fragmentManager.beginTransaction() // beginTransaction() -> 시작
+            fragmentTransaction.replace(R.id.container, fragmentOne) // 할 일
+            fragmentTransaction.commit() // commit -> 끝
+            // 끝을 내는 방법
+            // commit       -> 시간 될 때 해 (좀 더 안정적)
+            // commitnow    -> 지금 당장해
+        }
+        button2.setOnClickListener {
+            // Fragment remove/detach 하는 방법
+            // attach 와 detach 하는 Fragment는 동일해야한다
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.remove(fragmentOne)
+            fragmentTransaction.commit()
+
+            // remove는 붙였다 땠다 가능
+            // detach는 다시 붙이기 X
+
+        }
+    }
+```
+
+### Activity -> Fragment
+
+#### Fragment에 data를 넣어주는 방법
+
+```Kotlin
+  val fragmentOne : FragmentOne = FragmentOne()
+  val bundle: Bundle = Bundle()
+  bundle.putString("hello", "hello")
+  fragmentOne.arguments = bundle // fragmentOne에 bundle이 할당
+```
+
+```Kotlin
+  // Argument의 data 가져오기
+  override fun onActivityCreated(savedInstanceState: Bundle?) {
+        val data = arguments?.getString("hello")
+        Log.d("data", data.toString())
+        super.onActivityCreated(savedInstanceState)
+    }
+```
+
+### Fragment -> Activity
+
+```Kotlin
+  interface OnDataPassListener{ // interface 생성
+    fun onDataPass(data : String?)
+  }
+
+  lateinit var dataPassListener : OnDataPassListener
+
+  override fun onAttach(context: Context) {
+        super.onAttach(context)
+        dataPassListener = context as OnDataPassListener // as = 형변환
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Activity의 OnCreate에서 했던 작업을 여기에서 한다
+        pass.setOnClickListener {
+            dataPassListener.onDataPass("Good Bye")
+        }
+    }
+```
+
+#### 받는 쪽으로 가서
+
+```Kotlin
+  class ~~ : FragmentOne,OnDataPassListener{
+    override fun onDataPass(data: String?) { // interface 구현
+        Log.d("pass", "" + data)
+    }
+  }
+```

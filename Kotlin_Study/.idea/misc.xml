@@ -4,7 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_calculator.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/activity_fragment.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_intent.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_intent2.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_intent_practice.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_listener.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_01.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/frame_layout_07.xml" value="0.2" />
         <entry key="app/src/main/res/layout/frame_layout_practice_09.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/linear_layout_practice_02.xml" value="0.37604166666666666" />
