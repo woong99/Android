@@ -25,7 +25,10 @@
 
 # Android_Essential
 
-1. [Activity](#1_Activity)
+1. [Activity](#1-activity)
+2. [Listener](#2-listener)
+3. [Intent](#3-intent)
+4. [Fragment](#4-fragment)
 
 ---
 
@@ -810,6 +813,8 @@ fun showMyPlus(first: Int, second: Int): Int {
   }
 ```
 
+---
+
 ## 2. Listener
 
 - **익명함수/클래스**란?
@@ -850,6 +855,8 @@ fun showMyPlus(first: Int, second: Int): Int {
 - **View** 조작하기
   - setText
   - setImageResource 등등
+
+---
 
 ## 3. Intent
 
@@ -893,6 +900,8 @@ fun showMyPlus(first: Int, second: Int): Int {
   }
   startActivityForResult(intent2, 200)
 ```
+
+---
 
 ## 4. Fragment
 
@@ -1034,4 +1043,129 @@ override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("pass", "" + data)
     }
   }
+```
+
+---
+
+## 5. NullSafety
+
+- Kotlin 특징 -> Null에 대해서 안전하다
+
+- Null vs 0
+  - 0 : 휴지를 다 쓰고 휴지심만 남은 상태
+  - Null : 휴지심도 없는 상태, **존재하지 않는 상태**, 모르는 상태
+- Null이 안전하지 않은 이유
+  - 0 + 10 = 10
+  - Null + 10 = ?
+  - button.setOnClickListener -> O
+  - Null.setOnClickListener -> Error
+  - NullPointExceptionError 발생
+
+### 예시
+
+```Kotlin
+  if(number != null){
+    number += 10
+  }
+
+  if(number != null){
+    button.setOnClickListener
+  }
+```
+
+### Kotlin이 Null Safety 하기 위해서 사용하는 문법
+
+- **?** : Null이 아니라면 이하 구문 실행
+- !! : Null이 아님을 개발자가 보장, 최대한 사용하지 않도록 한다
+
+### 사용방법
+
+- button?.setOnClickListener -> ? 앞이 Null이 아니면 실행
+- button!!.setOnClickListener
+
+### Null 타입
+
+- Int, Double, Float, Class -> Null이 될 수 없는 타입
+- Int?, Double?, Float?, Class? -> Null이 될 수 있는 타입
+
+### 예시
+
+```Kotlin
+  val number: Int = Null // 문법 오류
+  val number: Int? = Null // 가능
+
+  val number2 = number? + number1 // 문법 우류
+  val number2 = number?.plus(number1) // ~~?.plus, minus 등 문법 존재, number가 null이 아니면 실행
+
+  fun plus(a: Int, b: Int?): Int{
+    if (b != null) return a + b
+    else return a
+  }
+
+  fun plus2(a: Int, b: Int?): Int?{ // return 타입도 null 가능하게
+    return b?.plus(a)
+  }
+```
+
+### !! 사용 예시
+
+```Kotlin
+  val number5: Int = number1 + 10 // 에러 : number1의 타입이 Int일 수도 Null일 수도 있다
+  val number5: Int = number1!! + 10 // number1이 Null이 아니라는 것을 개발자가 보증, 비추!!
+
+```
+
+### 엘비스 연산자 (삼항 연산자) -> ?:
+
+```Kotlin
+  val number = number1 ?: 10 // number1이 Null이면 10대입, 아니면 number1 값 대입
+```
+
+## 6. LateInit
+
+- init -> 초기값 설정
+- late -> 늦게, 나중에
+
+- 초기값을 나중에 설정해주겠다
+- 초기값이 설정되지 않았을 때 호출을 하면 에러 발생
+
+### 예시
+
+```Kotlin
+  lateinit var lateCar: Car // Int, Double 등과 같은 primitive type에서는 사용 불가
+```
+
+## 7. Resource
+
+- res 폴더
+  - colors.xml -> 색 관리
+  - strings.xml -> 문자 관리
+  - themes.xml -> 앱의 기본 환경 관리 (색,,)
+
+#### 나중에 가면 수 많은 파일이 있을탠데, 하나씩 찾아가면서 바꿀 수 없으므로 이런식으로 관리해준다.
+
+### colors.xml, strings.xml 예시
+
+```xml
+  <color name="textview_color">#F44336</color>
+  <string name="hello">안녕하세요.~~~~~~</string>
+  <!-- 입력 후 원하는 레이아웃으로 이동 -->
+```
+
+```Kotlin
+  android:background="@color/textview_color"
+  android:text="hello"
+```
+
+### Resource 예시
+
+```Kotlin
+  // 둘 다 가능
+  // 1
+  val ment1 = resource.getString(R.string.hello)
+
+  // 2
+  val ment2 = getString(R.string.hello)
+
+  val color = getColor(R.color.textview_color)
 ```

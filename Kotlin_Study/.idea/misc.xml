@@ -9,6 +9,8 @@
         <entry key="app/src/main/res/layout/activity_intent2.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_intent_practice.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_listener.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_null_safety.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_resource.xml" value="0.25271739130434784" />
         <entry key="app/src/main/res/layout/fragment_01.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/frame_layout_07.xml" value="0.2" />
         <entry key="app/src/main/res/layout/frame_layout_practice_09.xml" value="0.37604166666666666" />
@@ -17,6 +19,7 @@
         <entry key="app/src/main/res/layout/relative_layout_04.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/relative_layout_08.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/relative_layout_practice_05.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/resource.xml" value="0.5" />
       </map>
     </option>
   </component>
