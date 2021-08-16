@@ -1212,4 +1212,27 @@ override fun onCreate(savedInstanceState: Bundle?) {
 - UI Thread이다
   - 사용자의 inout을 받는 Thread
 - **절대 정지시킬 수 없다!**
-  - 정지시키거나 종료시키면 더 이상 사용자의 inout을 받을 수 없다
+  - 정지시키거나 종료시키면 더 이상 사용자의 input을 받을 수 없다
+
+### Thread 사용 빙밥
+
+```Kotlin
+  val runnable: Runnable = object : Runnable{
+    override fun run() {
+      // ~~~~~~~~~~~~~~
+            }
+  }
+  val thread: Thread = Thread(runnable)
+  thread.start // .start를 해야 Thread 작동
+
+  // 람다 방식
+  Thread(Runnable{
+    // ~~~~
+  })
+
+  // 기타 함수
+  Thread.sleep(10000) // 10000ms 후 작동
+  runOnUiThread{} // MainThread에서 돌아가는 Thread이다.
+```
+
+---
