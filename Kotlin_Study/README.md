@@ -1121,6 +1121,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
   val number = number1 ?: 10 // number1이 Null이면 10대입, 아니면 number1 값 대입
 ```
 
+---
+
 ## 6. LateInit
 
 - init -> 초기값 설정
@@ -1134,6 +1136,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ```Kotlin
   lateinit var lateCar: Car // Int, Double 등과 같은 primitive type에서는 사용 불가
 ```
+
+---
 
 ## 7. Resource
 
@@ -1169,3 +1173,43 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
   val color = getColor(R.color.textview_color)
 ```
+
+---
+
+## 8. Context
+
+#### 역할 : ActivityMangerService(개발하기 편하도록 미리 구현 해놓은 기능)에 접근 하도록 해주는 역할 -> 주변 정보
+
+#### 안드로이드는 이미 많은 부분들이 만들어져 있다 -> 이런 것들을 사용하기 위해서는 **Context**가 필요한 경우가 많다
+
+- 종류
+  - Activity의 Context -> Activity의 주변 정보
+  - Application의 Context -> Application의 주변 정보
+  - **ApplicationContext > ActivityContext**
+
+### 사용 방법
+
+```Kotlin
+  val context: Context = this // 상속 받는다
+  val applicationContext = getApplicationContext()
+```
+
+---
+
+## 9. Thread
+
+#### Thread(쓰레드) = 작업 흐름
+
+#### 안드로이드의 Thread
+
+- MainThread
+- 기타 Thread
+
+#### Thread가 여러 개 있는 경우 -> 여러 가지 일을 한 번에 할 수 있다
+
+#### 안드로이드 MainThread의 특징
+
+- UI Thread이다
+  - 사용자의 inout을 받는 Thread
+- **절대 정지시킬 수 없다!**
+  - 정지시키거나 종료시키면 더 이상 사용자의 inout을 받을 수 없다
