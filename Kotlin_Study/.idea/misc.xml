@@ -3,19 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_add_view.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_calculator.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/activity_fragment.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_intent.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_intent2.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_intent_practice.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_library.xml" value="0.1625" />
         <entry key="app/src/main/res/layout/activity_listener.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_null_safety.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_phone_book.xml" value="0.2871195475260417" />
+        <entry key="app/src/main/res/layout/activity_phone_book2.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_phone_book_real.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_resource.xml" value="0.25271739130434784" />
         <entry key="app/src/main/res/layout/activity_thread.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_01.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/frame_layout_07.xml" value="0.2" />
         <entry key="app/src/main/res/layout/frame_layout_practice_09.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/imageview_11.xml" value="0.271286231884058" />
+        <entry key="app/src/main/res/layout/item_view.xml" value="0.26490936279296873" />
         <entry key="app/src/main/res/layout/linear_layout_practice_02.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/phone_item.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/practice_12.xml" value="0.2" />
         <entry key="app/src/main/res/layout/relative_layout_04.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/relative_layout_08.xml" value="0.37604166666666666" />

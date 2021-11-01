@@ -1210,11 +1210,11 @@ override fun onCreate(savedInstanceState: Bundle?) {
 #### 안드로이드 MainThread의 특징
 
 - UI Thread이다
-  - 사용자의 inout을 받는 Thread
+  - 사용자의 input을 받는 Thread
 - **절대 정지시킬 수 없다!**
   - 정지시키거나 종료시키면 더 이상 사용자의 input을 받을 수 없다
 
-### Thread 사용 빙밥
+### Thread 사용 방법
 
 ```Kotlin
   val runnable: Runnable = object : Runnable{
@@ -1236,3 +1236,54 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ```
 
 ---
+
+## 10. Library
+
+- 개발을 하기 위해 필요한 도구들이 미리 구현되어 있는 것
+- 함수나, 클래스로 구현이 되어있다
+- 프레임워크에 없다!
+
+### 특징
+
+- 프레임워크에서 하기 힘든 것들을 쉽게 사용할 수 있도록 만들어 놨다!
+- 프레임워크에서 제공하지 않는 기능을 사용할 수 있도록 만들어 놨다!
+
+---
+
+## 11. AddView
+
+#### ListView : 유사하게 반복되는 View를 그리기 위한 도구
+
+### ListView를 그리는 방법
+
+- addView
+  - 실제로 ListView를 그리기 위해 잘 사용되지 않는다
+  - Item을 담을 XML을 만들어 준다
+  - 그 XML에 내용을 채워준다
+  - Container View에 더해준다
+  - 반복
+- ListView -> 예전에 많이 사용되었다
+- RecycleView -> 최근에 가장 많이 사용이 되고 가장 효율이 높다
+
+### 사용 방법
+
+```Kotlin
+  // 아이템 리스트 준비
+  val carList = ArrayList<CarForList>()
+  for (i in 0 until 10){
+    carList.add(CarForList("" + i + " 번째 자동차", "" + i + "순위 엔진"))
+  }
+
+  val container = findViewById<LinearLayout>(R.id.addview_container)
+  val inflater = LayoutInflater.from(this@AddViewActivity)
+        for (i in 0 until carList.size) {
+            val itemView = inflater.inflate(R.layout.item_view, null)
+            val carNameView = itemView.findViewById<TextView>(R.id.car_name)
+            val carEngineView = itemView.findViewById<TextView>(R.id.car_engine)
+
+            carNameView.text = carList[i].name
+            carEngineView.text = carList[i].engine
+            container.addView(itemView)
+        }
+    }
+```
